@@ -1,0 +1,44 @@
+<div class="po-row ">
+    <font class="po-font-title">Bem vindo ao Economiza</font>
+</div>
+<div class="po-row ">
+    <po-login
+        
+        p-focus=true
+        (p-blur)="EventEmitter"
+        (p-change)="EventEmitter"
+        (p-change-model)="EventEmitter"
+        p-clean=true
+        p-error-pattern="string"
+        p-icon="po-icon po-icon-user"
+        p-label="Login"
+        p-mask="string"
+        p-mask-format-model="boolean"
+        p-maxlength="number"
+        p-minlength="number"
+        name="Email"
+        p-no-autocomplete="boolean"
+        p-optional="boolean"
+        p-pattern="string"
+        p-placeholder="Email"
+        p-required=true
+    >
+    </po-login>
+</div>
+<div class="po-row">
+    <po-password
+        
+        name="Senha"
+        p-label="Senha"
+        p-placeholder="Senha"
+    >
+    </po-password>
+</div>
+<div class="po-row">
+    <po-button
+        
+        p-label="Entrar"
+        (p-click)="onClick()"
+    >
+    </po-button>
+</div>
