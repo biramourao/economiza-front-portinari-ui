@@ -1,40 +1,44 @@
 <div class="po-wrapper">
-  <po-menu class="color-primary-dark"
-    p-expand
-    p-filter
-    [p-menus]="menus"
-  >
-  <div *p-menu-header-template class="po-p-2 po-font-title sample-menu-header-text-color">
-    <p> Bem vindo, </p>
-    <p>
-      <b> John Doe </b>
-    </p>
-  </div>
-  </po-menu>
-  <po-page-default>
-      <div class="po-row">
-          <po-widget
-          class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-blue"
-          p-title="Total de Rendas"
-          >
-          <div class="po-font-subtitle po-text-center">300 views</div>
-        </po-widget>
-        <po-widget
-            class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-pink"
-            p-title="Total de Gastos"
+    <po-menu
+        class="color-primary-dark"
+        p-expand
+        p-filter
+        [p-menus]="menus"
+    >
+        <div
+            *p-menu-header-template
+            class="po-p-2 po-font-title sample-menu-header-text-color"
+        >
+            <p>Bem vindo,</p>
+            <p>
+                <b>John Doe</b>
+            </p>
+        </div>
+    </po-menu>
+    <po-page-default>
+        <div class="po-row">
+            <po-widget
+                class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-blue"
+                p-title="Total de Rendas"
             >
-            <div class="po-font-subtitle po-text-center">300 views</div>
-          </po-widget>
-          <po-widget id="disponivel"
-            class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-green"
-            p-title="Valor Disponível"
+                <div class="po-font-subtitle po-text-center">300 views</div>
+            </po-widget>
+            <po-widget
+                class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-pink"
+                p-title="Total de Gastos"
             >
-            <div class="po-font-subtitle po-text-center">300 views</div>
-          </po-widget>
-      </div>
-      <div class="po-row">
+                <div class="po-font-subtitle po-text-center">300 views</div>
+            </po-widget>
+            <po-widget
+                id="disponivel"
+                class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-green"
+                p-title="Saldo Restante"
+            >
+                <div class="po-font-subtitle po-text-center">300 views</div>
+            </po-widget>
+        </div>
+        <div class="po-row"></div>
 
-      </div>
-     
-  </po-page-default>
+
+    </po-page-default>
 </div>
