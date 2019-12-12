@@ -8,7 +8,6 @@ import { PoMenuItem } from '@portinari/portinari-ui';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   readonly menus: Array<PoMenuItem> = [
     { label: 'Usuário', action: this.onClick.bind(this), icon: 'po-icon-user', shortLabel: 'Usuário' },
     { label: 'Fontes de Renda', action: this.onClick.bind(this), icon: 'po-icon po-icon-finance-secure', shortLabel: 'Rendas' },
@@ -20,5 +19,7 @@ export class AppComponent {
   private onClick() {
     alert('Clicked in menu item')
   }
+
+  
 
 }
