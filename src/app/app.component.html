@@ -1,9 +1,10 @@
-<div class="po-wrapper">
+<div class="po-wrapper" *ngIf="isAuth()">
     <po-menu
         class="color-primary-dark"
         p-expand
         p-filter
         [p-menus]="menus"
+        
     >
         <div
             *p-menu-header-template
@@ -16,7 +17,7 @@
         </div>
     </po-menu>
     <po-page-default>
-        <div class="po-row">
+        <div class="po-row" >
             <po-widget
                 class="po-md-4 po-lg-4 po-mb-2 wid-title-white wid-back-blue"
                 p-title="Total de Rendas"
@@ -37,8 +38,8 @@
                 <div class="po-font-subtitle po-text-center">300 views</div>
             </po-widget>
         </div>
-        <div class="po-row"></div>
-
-
+        
+            <router-outlet></router-outlet>
     </po-page-default>
 </div>
+<app-login *ngIf="!isAuth()"></app-login>

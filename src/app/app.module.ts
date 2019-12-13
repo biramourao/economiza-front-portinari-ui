@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PoModule } from '@portinari/portinari-ui';
 import { RouterModule } from '@angular/router';
@@ -17,14 +17,15 @@ import { PoFieldModule } from '@portinari/portinari-ui';
   declarations: [
     AppComponent,
     LoginComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     PoModule,
     RouterModule.forRoot([]),
     FormsModule,
-    PoFieldModule
+    PoFieldModule,
+    routing
   ],
   providers: [
     ApiService,
