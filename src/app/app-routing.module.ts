@@ -2,15 +2,16 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { GastosComponent } from './gastos/gastos.component';
 
 
 const appRoutes: Routes = [
-/*{
+{
   path: 'gastos',
   component: GastosComponent,
   canActivate: [AuthGuard]
 },
-{ path: '', redirectTo: '/gastos', pathMatch: 'full', canActivate: [AuthGuard] },*/
+{ path: '', redirectTo: '/gastos', pathMatch: 'full', canActivate: [AuthGuard] },
 /*{ path: 'relatorio', component: GraficosGastosComponent, canActivate: [AuthGuard] },
 { path: 'not-found', component: NotFoundComponent, canActivate: [AuthGuard] },
 { path: 'cadastro-usuario', component: CadastroUsuarioComponent },
