@@ -1,0 +1,12 @@
+.wid-back-green{
+    --color-widget-background-color: #6ab04c !important;
+}
+.wid-back-pink{
+    --color-widget-background-color: #eb4d4b !important;
+}
+.wid-back-blue{
+    --color-widget-background-color: #686de0!important;
+}
+.wid-title-white{
+    --color-widget-color-default: white !important;
+}
