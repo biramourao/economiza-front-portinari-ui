@@ -1,0 +1,68 @@
+<div class="po-row justify-content">
+    <font class="po-font-subtitle">Relação de Gastos</font>
+</div>
+<br>
+<!-- <po-table
+    p-container
+    p-sort="true"
+    p-striped="true"
+    [p-columns]="columns"
+    [p-items]="items"
+    [p-height]="400">
+  </po-table>
+
+  <po-list-view
+  p-property-title="nome"
+  [p-items]="items">
+
+  <ng-template p-list-view-content-template let-item >
+    <div class="po-row">
+      <po-info class="po-md-3 po-mb-3" p-label="Valor" [p-value]="item.valor" ></po-info>
+      <po-info class="po-md-3 po-mb-3" p-label="Categoria:" [p-value]="item.categoriaGasto"></po-info>
+      <po-info class="po-md-3 po-mb-3" p-label="Vencimento:" [p-value]="item.vencimento"></po-info>
+      <po-info class="po-md-3 po-mb-3" p-label="Status:" [p-value]="item.pago"></po-info>
+    </div>
+  </ng-template>
+
+</po-list-view> -->
+<po-container *ngFor="let item of items">
+    <div class="po-row">
+        <font class="po-font-text-uppercase">{{item.nome}}</font>
+    </div>
+    <po-divider></po-divider>
+    <div class="po-row">
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text-bold">Valor</font>
+        </div>
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text-bold">Categoria</font>
+        </div>
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text-bold">Vencimento</font>
+        </div>
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text-bold">Pagamento</font>
+        </div>
+    </div>
+    <div class="po-row">
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text">{{item.valor}}</font>
+        </div>
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text">{{item.categoriaGasto}}</font>
+        </div>
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <font class="po-font-text">{{item.vencimento}}</font>
+        </div>
+        <div class="po-xl-3 po-lg-3 po-md-3 po-sm-3">
+            <po-tag
+                p-icon="true | {{item.type}}"
+                p-inverse=false
+                p-orientation="horizontal"
+                p-type={{item.type}}
+                p-value="{{item.dtPagamento}}"
+            >
+            </po-tag>
+        </div>
+    </div>
+</po-container>
