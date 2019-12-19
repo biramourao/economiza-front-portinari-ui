@@ -10,3 +10,21 @@
 .wid-title-white{
     --color-widget-color-default: white !important;
 }
+.button-disabled-back-border-green{
+  --color-button-background-color-disabled: #6ab04c !important;
+  --color-button-border-disabled:  #6ab04c !important;
+}
+.button-disabled-back-border-pink{
+  --color-button-background-color-disabled: #eb4d4b !important;
+  --color-button-border-disabled:  #eb4d4b !important;
+}
+.button-disabled-back-border-blue{
+  --color-button-background-color-disabled: #686de0!important;
+  --color-button-border-disabled: #686de0!important;
+  }
+.button-disabled-title-white{
+  --color-button-color-disabled: white !important;
+}
+.padding-bottom-10{
+  padding-bottom: 10px !important;
+}
