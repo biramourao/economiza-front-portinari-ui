@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { PoMenuItem } from '@portinari/portinari-ui';
 import { AuthService } from './auth/auth-service.service';
 import { TokenStorageService } from './auth/token-storage.service';
+import { ApiService } from './api.service';
+import { Usuario } from './model/usuario';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,9 @@ import { TokenStorageService } from './auth/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService){
+  usuario = new Usuario();
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private apiService: ApiService){
+    this.getUsuario();
   }
   readonly menus: Array<PoMenuItem> = [
     { label: 'Usuário', action: this.onClick.bind(this), icon: 'po-icon-user', shortLabel: 'Usuário' },
@@ -25,6 +29,16 @@ export class AppComponent {
   }
   isAuth() {
     return this.authService.isAuthenticated();
+  }
+  getUsuario() {
+    this.apiService.getUsuario().subscribe(
+      data => {
+        this.usuario = data as unknown as Usuario;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
   
   logout() {
