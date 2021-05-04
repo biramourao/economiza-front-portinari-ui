@@ -53,7 +53,6 @@ export class GastosComponent implements OnInit {
   loadItems(data: any[]){
     data.forEach(element => {
       let item: {nome: string, valor: string, categoriaGasto: string, vencimento: string, pago: string, dtPagamento: string, type: string};
-      item = new Object();
       item.nome = element.nome,
       item.valor = element.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       item.categoriaGasto = element.categoriaGasto.descricao;
