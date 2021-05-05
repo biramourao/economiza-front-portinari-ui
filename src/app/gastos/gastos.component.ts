@@ -41,7 +41,6 @@ export class GastosComponent implements OnInit {
     this.fim = this.ultimoDiaMes();*/
     this.inicio = this.primeiroDiaMes();
     this.fim = this.ultimoDiaMes();
-    this.atualizaGastos(this.primeiroDiaMes(), this.ultimoDiaMes());
     
   }
 
@@ -57,7 +56,7 @@ export class GastosComponent implements OnInit {
       item.nome = element.nome,
       item.valor = element.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       item.categoriaGasto = element.categoriaGasto.descricao;
-      item.vencimento = formatDate(element.vencimento, 'dd/MM/yyyy', 'en-US');
+      item.vencimento = formatDate(element.vencimento, 'dd/MM/yyyy', 'en-US','-0300');
       if (element.dtPagamento === null) {
         item.pago = 'NAO PAGO';
         item.dtPagamento = 'NÃO PAGO'
@@ -65,7 +64,7 @@ export class GastosComponent implements OnInit {
 
       }else{
         item.pago = 'PAGO';
-        item.dtPagamento = formatDate(element.dtPagamento, 'dd/MM/yyyy', 'en-US');
+        item.dtPagamento = formatDate(element.dtPagamento, 'dd/MM/yyyy', 'en-US','-0300');
         item.type = 'success'
       }
       tempItems.push(item);
@@ -139,9 +138,9 @@ export class GastosComponent implements OnInit {
     this.apiService.getGasto(cod).subscribe(
       data => {
         this.gasto = data;
-        this.gasto.vencimento = formatDate(data.vencimento, 'yyyy-MM-dd', 'en-US');
+        this.gasto.vencimento = formatDate(data.vencimento, 'dd/MM/yyyy', 'en-US','-0300');
         if (this.gasto.dtPagamento) {
-          this.gasto.dtPagamento = formatDate(data.dtPagamento, 'yyyy-MM-dd', 'en-US');
+          this.gasto.dtPagamento = formatDate(data.dtPagamento, 'dd/MM/yyyy', 'en-US','-0300');
         }
         if (data.categoriaGasto === null) {
           this.gasto.categoriaGasto = new CategoriaGasto();
