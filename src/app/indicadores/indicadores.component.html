@@ -2,7 +2,7 @@
     <div class="po-md-4 po-lg-4 po-sm-12 po-mb-12 padding-bottom-10">
         <po-button
             class="po-md-12 po-lg-12 po-sm-12 po-mb-12 button-disabled-back-border-green button-disabled-title-white"
-            p-label="Total de Rendas: R$ 5000,00"
+            p-label="Total de Rendas: R$ {{totalRenda}}"
             (p-click)="onClick()"
             p-disabled
         >
@@ -11,7 +11,7 @@
     <div class="po-md-4 po-lg-4 po-sm-12 po-mb-12 padding-bottom-10">
         <po-button
             class="po-md-12 po-lg-12 po-sm-12 po-mb-12 button-disabled-back-border-pink button-disabled-title-white"
-            p-label="Total de Gasto: R$ 3000,00"
+            p-label="Total de Gasto: R$ {{totalGastos}}"
             (p-click)="onClick()"
             p-disabled
         >
@@ -21,7 +21,7 @@
     <div class="po-md-4 po-lg-4 po-sm-12 po-mb-12 padding-bottom-10">
         <po-button
             class="po-md-12 po-lg-12 po-sm-12 po-mb-12 button-disabled-back-border-blue button-disabled-title-white"
-            p-label="Saldo Restante: R$ 2000,00"
+            p-label="Saldo Restante: R$ {{sobra}}"
             (p-click)="onClick()"
             p-disabled
         >
