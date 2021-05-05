@@ -6,6 +6,7 @@ import { ApiService } from '../api.service';
 import { GlobalConstantsService } from '../shared/global-constants.service';
 import { CategoriaGasto } from '../model/categoria-gasto';
 import { formatDate } from '@angular/common';
+import { GastoTable } from '../model/gasto-table'
 
 @Component({
   selector: 'app-gastos',
@@ -13,20 +14,17 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./gastos.component.css']
 })
 export class GastosComponent implements OnInit {
-
   readonly actions: Array<PoPageAction> = [
     // actions of table here
   ];
 
   readonly columns: Array<PoTableColumn> = [
     // columns of table here
-    { property: 'nome', width: '30%', label: 'Descrição' },
-    { property: 'valor', width: '15%',type: 'currency', format: 'BRL' },
-    { property: 'categoriaGasto', width: '20%', label: 'Categoria' },
-    { property: 'vencimento', width: '15%', type: 'date' },
-    { property: 'pago', width: '15%', label: 'Pagamento', type: 'label',labels: [
-      { value: 'PAGO', color: 'color-11', label: 'Pago' },
-      { value: 'NAO PAGO', color: 'color-08', label: 'A Pagar' }] }
+    { property: 'pago', width: '10%', label: 'Pago', type: 'subtitle',subtitles: [
+      { value: 'PAGO', color: 'color-11', label: 'Pago', content: 'P' },
+      { value: 'NAO PAGO', color: 'color-08', label: 'A Pagar', content:'N' }] },
+    { property: 'nome', width: '60%', label: 'Descrição' },
+    { property: 'valor', width: '30%' }
   ];
 
   items: Array<any> = [];
@@ -35,6 +33,7 @@ export class GastosComponent implements OnInit {
   gastos = new Array<Gasto>();
   gasto = new Gasto();
   sortedData = new Array<Gasto>();
+  lock = false;
 
   constructor(private apiService: ApiService, private globalConstants: GlobalConstantsService) {
 
@@ -42,7 +41,6 @@ export class GastosComponent implements OnInit {
     this.fim = this.ultimoDiaMes();*/
     this.inicio = this.primeiroDiaMes();
     this.fim = this.ultimoDiaMes();
-    this.atualizaGastos(this.primeiroDiaMes(), this.ultimoDiaMes());
     
   }
 
@@ -51,12 +49,15 @@ export class GastosComponent implements OnInit {
    }
 
   loadItems(data: any[]){
+    let tempItems = [];
+    
     data.forEach(element => {
-      let item: {nome: string, valor: string, categoriaGasto: string, vencimento: string, pago: string, dtPagamento: string, type: string};
+      
+      let item = new GastoTable();
       item.nome = element.nome,
       item.valor = element.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       item.categoriaGasto = element.categoriaGasto.descricao;
-      item.vencimento = formatDate(element.vencimento, 'dd/MM/yyyy', 'en-US');
+      item.vencimento = formatDate(element.vencimento, 'dd/MM/yyyy', 'en-US','-0300');
       if (element.dtPagamento === null) {
         item.pago = 'NAO PAGO';
         item.dtPagamento = 'NÃO PAGO'
@@ -64,15 +65,18 @@ export class GastosComponent implements OnInit {
 
       }else{
         item.pago = 'PAGO';
-        item.dtPagamento = formatDate(element.dtPagamento, 'dd/MM/yyyy', 'en-US');
+        item.dtPagamento = formatDate(element.dtPagamento, 'dd/MM/yyyy', 'en-US','-0300');
         item.type = 'success'
       }
-      this.items.push(item);
+      tempItems.push(item);
       
     });
+    this.items = tempItems;
+    
   }
 
   atualizaGastos(dtInicio: string, dtFim: string) {
+    this.lock = true;
     this.apiService.listGasto(dtInicio, dtFim).subscribe(
       data => {
         this.gastos = data as unknown as Gasto[];
@@ -81,10 +85,12 @@ export class GastosComponent implements OnInit {
         this.globalConstants.atualizaFontesDeRenda(dtInicio, dtFim);
         this.loadItems(this.gastos);
         console.log(this.items)
+        this.lock = false;
       },
       error => {
         console.log(error);
         alert(error.msg);
+        this.lock = false;
       }
     );
   }
@@ -133,9 +139,9 @@ export class GastosComponent implements OnInit {
     this.apiService.getGasto(cod).subscribe(
       data => {
         this.gasto = data;
-        this.gasto.vencimento = formatDate(data.vencimento, 'yyyy-MM-dd', 'en-US');
+        this.gasto.vencimento = formatDate(data.vencimento, 'dd/MM/yyyy', 'en-US','-0300');
         if (this.gasto.dtPagamento) {
-          this.gasto.dtPagamento = formatDate(data.dtPagamento, 'yyyy-MM-dd', 'en-US');
+          this.gasto.dtPagamento = formatDate(data.dtPagamento, 'dd/MM/yyyy', 'en-US','-0300');
         }
         if (data.categoriaGasto === null) {
           this.gasto.categoriaGasto = new CategoriaGasto();
@@ -172,6 +178,16 @@ export class GastosComponent implements OnInit {
     } else {
       return true;
     }
+  }
+  ativaButtomFiltrar(){
+    if ((this.inicio != '' && this.fim != '') && (this.inicio != null && this.fim != null)) {
+      return 'false';
+    }else{
+      return 'true';
+    }
+  }
+  onClick(){
+    window.alert("teste");
   }
 }
 

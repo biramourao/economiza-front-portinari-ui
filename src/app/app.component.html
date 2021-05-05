@@ -8,16 +8,16 @@
     >
         <div
             *p-menu-header-template
-            class="po-p-2 po-font-title sample-menu-header-text-color"
+            class="po-p-2 sample-menu-header-text-color"
         >
-            <p>Bem vindo,</p>
-            <p>
-                <b>John Doe</b>
-            </p>
+        <font class="po-font-text-large">Bem vindo,</font>
+        <br>
+        <font class="po-font-text-large-bold">{{usuario.nome}}</font>
         </div>
     </po-menu>
     <po-page-default>
         <app-indicadores></app-indicadores>
+        <po-divider></po-divider>
         <router-outlet></router-outlet>
     </po-page-default>
 </div>

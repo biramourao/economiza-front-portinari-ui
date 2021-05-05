@@ -3,3 +3,6 @@
     --color-menu-color-menu-item-text: rgba(59, 28, 74, 0.7) !important;
     --color-menu-filter-color-icon: rgba(59, 28, 74, 0.7) !important;
 }
+.uppercase{
+    text-transform: uppercase;
+}
