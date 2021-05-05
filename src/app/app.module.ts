@@ -18,13 +18,15 @@ import { IndicadoresComponent } from './indicadores/indicadores.component';
 import { PoTableModule } from '@portinari/portinari-ui';
 import { PoHttpInterceptorModule } from '@portinari/portinari-ui';
 import { PoNotificationModule } from '@portinari/portinari-ui';
+import { FormGastosComponent } from './form-gastos/form-gastos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     GastosComponent,
-    IndicadoresComponent
+    IndicadoresComponent,
+    FormGastosComponent
   ],
   imports: [
     BrowserModule,
