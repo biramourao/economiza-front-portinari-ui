@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PoPageAction, PoTableColumn } from '@portinari/portinari-ui';
+import { PoPageAction, PoTableColumn } from '@po-ui/ng-components';
 import { Gasto } from '../model/gasto';
 import { ApiService } from '../api.service';
 import { GlobalConstantsService } from '../shared/global-constants.service';

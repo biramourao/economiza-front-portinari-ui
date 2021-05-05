@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
-import { PoPageAction } from '@portinari/portinari-ui';
+import { PoPageAction } from '@po-ui/ng-components';
 import { ApiService } from '../api.service';
 import { FonteDeRenda } from '../model/fonte-de-renda';
 import { Gasto } from '../model/gasto';

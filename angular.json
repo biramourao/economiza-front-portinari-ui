@@ -24,11 +24,11 @@
               "src/assets"
             ],
             "styles": [
-              //"./node_modules/@portinari/style/css/po-theme-default.min.css",
+              //"./node_modules/@po-ui/style/css/po-theme-default.min.css",
               // Arquivo de variáveis (tema padrão)
-              "node_modules/@portinari/style/css/po-theme-default-variables.min.css",
+              "node_modules/@po-ui/style/css/po-theme-default-variables.min.css",
               // Arquivo com os estilos sem as variáveis "compiladas"
-              "node_modules/@portinari/style/css/po-theme-core.min.css",
+              "node_modules/@po-ui/style/css/po-theme-core.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -93,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@portinari/style/css/po-theme-default.min.css",
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
               "src/styles.css"
             ],
             "scripts": []
