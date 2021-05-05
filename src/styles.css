@@ -4,3 +4,14 @@
     justify-content: center !important; 
     text-align: center !important;
 }
+:root {
+    --color-button-background-color-primary: #c9357d !important;
+    --color-button-border-primary: #c9357d !important;
+    --color-button-color-primary: #ffffff !important;
+    --color-button-background-color-primary-hover: #9c2961 !important;
+    --color-button-border-primary-hover: #9c2961 !important;
+    --color-button-color-primary-hover: #ffffff !important;
+    --color-button-background-color-primary-pressed: #531533 !important;
+    --color-button-border-primary-pressed: #531533 !important;
+    --color-button-color-primary-pressed: #ffffff !important;
+  }
