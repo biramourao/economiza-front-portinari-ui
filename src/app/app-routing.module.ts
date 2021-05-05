@@ -12,7 +12,7 @@ const appRoutes: Routes = [
   component: GastosComponent,
   canActivate: [AuthGuard]
 },
-{ path: '', redirectTo: '/gastos', pathMatch: 'full', canActivate: [AuthGuard] },
+{ path: '', redirectTo: '/gastos', pathMatch: 'full' },
 {
   path: 'gastos/:tipo/:codGasto',
   component: FormGastosComponent,
@@ -44,8 +44,8 @@ const appRoutes: Routes = [
   component: FormFonteDeRendaComponent,
   canActivate: [AuthGuard]
 },*/
-{ path: '**', redirectTo: '/', canActivate: [AuthGuard] }
+{ path: '**', redirectTo: '/' }
 //{ path: '**', redirectTo: '/login' }
 ];
 
-export const routing: ModuleWithProviders<NgModule> = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders<NgModule> = RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' });

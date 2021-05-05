@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PoPageModule } from '@po-ui/ng-components';
@@ -9,7 +9,7 @@ describe('IndicadoresComponent', () => {
   let component: IndicadoresComponent;
   let fixture: ComponentFixture<IndicadoresComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,

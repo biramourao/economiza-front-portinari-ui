@@ -31,7 +31,7 @@ import { FormGastosComponent } from './form-gastos/form-gastos.component';
   imports: [
     BrowserModule,
     PoModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
     FormsModule,
     PoFieldModule,
     routing,
