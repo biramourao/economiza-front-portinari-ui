@@ -48,4 +48,4 @@ const appRoutes: Routes = [
 //{ path: '**', redirectTo: '/login' }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders<NgModule> = RouterModule.forRoot(appRoutes);
