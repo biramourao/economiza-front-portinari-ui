@@ -1,11 +1,20 @@
 <po-page-edit
   p-disable-submit="false"
   p-title="Cadastro de Gasto"
-  (p-cancel)="cancel()"
-  (p-save)="save()"
-  (p-save-new)="saveNew()"
 >
-    <form #formEditUser="ngForm">
-            
-    </form>
+  <po-dynamic-form
+    #dynamicForm
+    p-auto-focus="name"
+    [p-fields]="fields"
+    [p-value]="gasto"
+  >
+  </po-dynamic-form>
+  <div class="po-row">
+    <po-button
+      class="po-md-3"
+      p-label="Save"
+      (p-click)="poNotification.success('Data saved successfully!'); salvar()"
+    >
+    </po-button>
+  </div>
 </po-page-edit>
