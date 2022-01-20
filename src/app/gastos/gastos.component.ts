@@ -52,7 +52,6 @@ export class GastosComponent implements OnInit {
     let tempItems = [];
     
     data.forEach(element => {
-      
       let item = new GastoTable();
       item.nome = element.nome,
       item.valor = element.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
