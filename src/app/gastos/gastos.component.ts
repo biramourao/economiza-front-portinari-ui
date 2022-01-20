@@ -160,8 +160,8 @@ export class GastosComponent implements OnInit {
 
   primeiroDiaMes(): string {
     const date = new Date();
-    const primeiroDia = new Date(date.getFullYear(), 1, 1);
-    return formatDate(primeiroDia, 'yyyy-MM-dd', 'en-US','+0430');
+    const primeiroDia = new Date(date.getFullYear(), date.getMonth(), 1);
+    return formatDate(primeiroDia, 'yyyy-MM-dd', 'en-US');
   }
 
   somaGastos(gastos: Array<Gasto>): number {
