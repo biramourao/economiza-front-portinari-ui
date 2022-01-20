@@ -29,7 +29,7 @@ export class ApiService {
   //Metodos de categoria de Gasto
   listCategoriaDeGasto() {
     const url = `${this.apiURL}/categorias-de-gasto`;
-    return this.http.get<CategoriaGasto>(url, { responseType: 'json' });
+    return this.http.get<Array<CategoriaGasto>>(url, { responseType: 'json' });
   }
   cadastrarCategoriaGasto(categoriaGasto: CategoriaGasto) {
     const url = `${this.apiURL}/categorias-de-gasto`;
