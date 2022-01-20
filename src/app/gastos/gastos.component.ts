@@ -6,6 +6,7 @@ import { GlobalConstantsService } from '../shared/global-constants.service';
 import { CategoriaGasto } from '../model/categoria-gasto';
 import { formatDate } from '@angular/common';
 import { GastoTable } from '../model/gasto-table'
+import {PoPageAction, PoTableColumn} from "@po-ui/ng-components";
 
 @Component({
   selector: 'app-gastos',

@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 
 import { IndicadoresComponent } from './indicadores.component';
+import {PoPageModule} from "@po-ui/ng-components";
 
 describe('IndicadoresComponent', () => {
   let component: IndicadoresComponent;

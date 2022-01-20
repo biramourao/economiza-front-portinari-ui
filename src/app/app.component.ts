@@ -4,6 +4,7 @@ import { AuthService } from './auth/auth-service.service';
 import { TokenStorageService } from './auth/token-storage.service';
 import { ApiService } from './api.service';
 import { Usuario } from './model/usuario';
+import {PoMenuItem} from "@po-ui/ng-components";
 
 @Component({
   selector: 'app-root',

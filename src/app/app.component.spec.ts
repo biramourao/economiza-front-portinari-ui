@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 
 import { AppComponent } from './app.component';
+import {PoMenuModule, PoPageModule, PoToolbarModule} from "@po-ui/ng-components";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

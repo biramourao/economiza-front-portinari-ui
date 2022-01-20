@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { GastosComponent } from './gastos/gastos.component';
 import { IndicadoresComponent } from './indicadores/indicadores.component';
 import { FormGastosComponent } from './form-gastos/form-gastos.component';
+import { PoTemplatesModule } from '@po-ui/ng-templates';
+import {PoFieldModule, PoModule, PoPageModule, PoTableModule} from "@po-ui/ng-components";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FormGastosComponent } from './form-gastos/form-gastos.component';
     PoFieldModule,
     routing,
     PoPageModule,
-    PoTableModule
+    PoTableModule,
+    PoTemplatesModule
 
 
   ],

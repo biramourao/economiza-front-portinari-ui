@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Gasto} from "../model/gasto";
+import {PoDynamicFormField, PoNotificationService} from "@po-ui/ng-components";
 
 @Component({
   selector: 'app-form-gastos',

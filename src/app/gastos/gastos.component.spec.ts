@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 
 import { GastosComponent } from './gastos.component';
+import {PoInfoModule, PoPageModule, PoTableModule} from "@po-ui/ng-components";
 
 describe('GastosComponent', () => {
   let component: GastosComponent;

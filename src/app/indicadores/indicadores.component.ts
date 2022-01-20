@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FonteDeRenda } from '../model/fonte-de-renda';
 import { Gasto } from '../model/gasto';
+import {PoPageAction} from "@po-ui/ng-components";
 
 @Component({
   selector: 'app-indicadores',
