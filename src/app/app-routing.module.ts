@@ -1,9 +1,8 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './auth/auth.guard';
-import { GastosComponent } from './gastos/gastos.component';
-import { FormGastosComponent } from './form-gastos/form-gastos.component';
+import {ModuleWithProviders} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AuthGuard} from './auth/auth.guard';
+import {GastosComponent} from './gastos/gastos.component';
+import {FormGastosComponent} from './form-gastos/form-gastos.component';
 
 
 const appRoutes: Routes = [
@@ -12,12 +11,18 @@ const appRoutes: Routes = [
   component: GastosComponent,
   canActivate: [AuthGuard]
 },
-{ path: '', redirectTo: '/gastos', pathMatch: 'full', canActivate: [AuthGuard] },
-{
-  path: 'gastos/:tipo/:codGasto',
-  component: FormGastosComponent,
-  canActivate: [AuthGuard]
-},
+  {
+    path: 'gastos/cadastrar',
+    component: FormGastosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'gastos/:tipo/:codGasto',
+    component: FormGastosComponent,
+    canActivate: [AuthGuard]
+  },
+{ path: '', redirectTo: '/gastos', canActivate: [AuthGuard] },
+
 /*{ path: 'relatorio', component: GraficosGastosComponent, canActivate: [AuthGuard] },
 { path: 'not-found', component: NotFoundComponent, canActivate: [AuthGuard] },
 { path: 'cadastro-usuario', component: CadastroUsuarioComponent },
@@ -44,7 +49,7 @@ const appRoutes: Routes = [
   component: FormFonteDeRendaComponent,
   canActivate: [AuthGuard]
 },*/
-{ path: '**', redirectTo: '/', canActivate: [AuthGuard] }
+{ path: '**', redirectTo: '/login', canActivate: [AuthGuard] }
 //{ path: '**', redirectTo: '/login' }
 ];
 
