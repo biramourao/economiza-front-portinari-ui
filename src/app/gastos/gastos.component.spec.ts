@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { PoPageModule, PoInfoModule, PoTableModule } from '@portinari/portinari-ui';
 
 import { GastosComponent } from './gastos.component';
 

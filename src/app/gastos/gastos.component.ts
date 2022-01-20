@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PoPageAction, PoTableColumn } from '@portinari/portinari-ui';
 import { Gasto } from '../model/gasto';
 import { ApiService } from '../api.service';
 import { GlobalConstantsService } from '../shared/global-constants.service';
@@ -41,7 +40,7 @@ export class GastosComponent implements OnInit {
     this.fim = this.ultimoDiaMes();*/
     this.inicio = this.primeiroDiaMes();
     this.fim = this.ultimoDiaMes();
-    
+
   }
 
   ngOnInit() {
@@ -50,7 +49,7 @@ export class GastosComponent implements OnInit {
 
   loadItems(data: any[]){
     let tempItems = [];
-    
+
     data.forEach(element => {
       let item = new GastoTable();
       item.nome = element.nome,
@@ -68,10 +67,10 @@ export class GastosComponent implements OnInit {
         item.type = 'success'
       }
       tempItems.push(item);
-      
+
     });
     this.items = tempItems;
-    
+
   }
 
   atualizaGastos(dtInicio: string, dtFim: string) {

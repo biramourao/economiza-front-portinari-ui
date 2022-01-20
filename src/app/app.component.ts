@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { PoMenuItem } from '@portinari/portinari-ui';
 import { AuthService } from './auth/auth-service.service';
 import { TokenStorageService } from './auth/token-storage.service';
 import { ApiService } from './api.service';
@@ -40,11 +39,11 @@ export class AppComponent {
       }
     );
   }
-  
+
   logout() {
     this.tokenStorage.signOut();
   }
 
-  
+
 
 }
